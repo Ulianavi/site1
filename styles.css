@@ -1,0 +1,197 @@
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    animation: slide-down 1s ease-out;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    animation: fade-in 2s ease-out;
+    text-align: center; /* Центруємо навігацію */
+}
+
+nav ul li {
+    display: inline-block; /* Змінили на inline-block для кращої адаптації */
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffe4b5;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Стилі для контенту */
+.intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.intro h2 {
+    color: #ff6347;
+    margin-bottom: 20px;
+    animation: fade-in 1.5s ease-in-out;
+}
+
+.intro p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.intro .btn {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.intro .btn:hover {
+    background-color: #ffa07a;
+}
+
+.recipe-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.recipe-card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 300px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.recipe-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.recipe-card h3 {
+    color: #ff6347;
+    margin-bottom: 10px;
+}
+
+.recipe-card p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.recipe-card .btn {
+    padding: 10px 15px;
+    background-color: #ff6347;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.recipe-card .btn:hover {
+    background-color: #ffa07a;
+}
+
+.recipe-card:hover {
+    transform: scale(1.05);
+}
+
+/* Адаптивні стилі */
+@media (max-width: 740px) {
+    /* Оновлення стилів для мобільних пристроїв */
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column; /* Створюємо вертикальне меню */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Зменшуємо відстань між пунктами меню */
+        font-size: 18px;
+    }
+
+    .recipe-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recipe-card {
+        max-width: 100%;
+        margin: 20px 0;
+    }
+
+    .intro {
+        margin-bottom: 30px;
+    }
+
+    .intro p {
+        font-size: 16px;
+    }
+
+    /* Для відео в мобільній версії */
+    .intro iframe {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

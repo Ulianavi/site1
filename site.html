@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кулінарний сайт</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function showPage(page) {
+            // Сховати всі секції
+            var sections = document.querySelectorAll('.page');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            // Показати вибрану секцію
+            document.getElementById(page).style.display = 'block';
+        }
+
+        window.onload = function() {
+            // Показати головну сторінку за замовчуванням
+            showPage('home');
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Bake a Cake</h1>
+        <nav>
+            <ul>
+                <li><a href="javascript:void(0);" onclick="showPage('home')">Головна</a></li>
+                <li><a href="javascript:void(0);" onclick="showPage('recipes')">Рецепти</a></li>
+                <li><a href="javascript:void(0);" onclick="showPage('about')">Про нас</a></li>
+                <li><a href="javascript:void(0);" onclick="showPage('contact')">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Головна сторінка -->
+        <section id="home" class="page">
+    <div class="intro">
+        <h2>Ласкаво просимо на наш кулінарний сайт!</h2>
+        <p>Знайдіть найсмачніші рецепти та натхнення для приготування страв у себе вдома. Ми ділимося секретами приготування солодощів, випічки та традиційних страв.</p>
+
+        <!-- Вставка відео з YouTube -->
+        
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fC2vaR-Ieow?si=qmnBDPivoBwyqdL3" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen></iframe>
+    </div>
+</section>
+
+        <!-- Рецепти -->
+        <section id="recipes" class="page" style="display: none;">
+            <h2>Популярні рецепти</h2>
+            <div class="recipe-grid">
+                <div class="recipe-card">
+                    <img src="cake.jpg" alt="Шоколадний торт">
+                    <h3>Шоколадний торт</h3>
+                    <p>Насолоджуйтесь цим неймовірно смачним тортом з шоколадним кремом.</p>
+                    <a href="javascript:void(0);" class="btn" onclick="showPage('chocolate-cake')">Дивитися рецепт</a>
+                </div>
+                <div class="recipe-card">
+                    <img src="cookies.jpg" alt="Печиво з шоколадом">
+                    <h3>Печиво з шоколадом</h3>
+                    <p>Легке у приготуванні та неймовірно смачне печиво.</p>
+                    <a href="javascript:void(0);" class="btn" onclick="showPage('chocolate-cookies')">Дивитися рецепт</a>
+                </div>
+                <div class="recipe-card">
+                    <img src="soup.jpg" alt="Овочевий суп">
+                    <h3>Овочевий суп</h3>
+                    <p>Корисний та смачний овочевий суп для всієї родини.</p>
+                    <a href="javascript:void(0);" class="btn" onclick="showPage('vegetable-soup')">Дивитися рецепт</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Рецепт шоколадного торта -->
+        <section id="chocolate-cake" class="page" style="display: none;">
+            <h2>Рецепт Шоколадного торта</h2>
+            <p>Насолоджуйтесь неймовірно смачним шоколадним тортом із шоколадним кремом.</p>
+            <h4>Інгредієнти:</h4>
+            <ul>
+                <li>200 г темного шоколаду</li>
+                <li>200 г масла</li>
+                <li>4 яйця</li>
+                <li>150 г цукру</li>
+                <li>100 г борошна</li>
+            </ul>
+            <h4>Інструкція:</h4>
+            <ol>
+                <li>Розтопіть шоколад і масло на водяній бані.</li>
+                <li>Збийте яйця з цукром до пишної маси.</li>
+                <li>Додайте розтоплену шоколадну суміш до яєць, перемішайте.</li>
+                <li>Постепенно додавайте борошно, ретельно перемішуючи.</li>
+                <li>Випікайте при температурі 180°C протягом 30 хвилин.</li>
+            </ol>
+            <a href="javascript:void(0);" class="btn" onclick="showPage('recipes')">Повернутися до рецептів</a>
+        </section>
+
+        <!-- Рецепт печива з шоколадом -->
+        <section id="chocolate-cookies" class="page" style="display: none;">
+            <h2>Рецепт Печива з шоколадом</h2>
+            <p>Легке у приготуванні та неймовірно смачне печиво з шоколадними шматочками.</p>
+            <h4>Інгредієнти:</h4>
+            <ul>
+                <li>200 г масла</li>
+                <li>100 г цукру</li>
+                <li>200 г борошна</li>
+                <li>100 г шоколадних чіпсів</li>
+                <li>1 яйце</li>
+            </ul>
+            <h4>Інструкція:</h4>
+            <ol>
+                <li>Збийте масло з цукром до кремоподібного стану.</li>
+                <li>Додайте яйце, перемішайте.</li>
+                <li>Додайте борошно, потім шоколадні чіпси.</li>
+                <li>Формуйте кульки і випікайте при температурі 180°C протягом 15 хвилин.</li>
+            </ol>
+            <a href="javascript:void(0);" class="btn" onclick="showPage('recipes')">Повернутися до рецептів</a>
+        </section>
+
+        <!-- Рецепт овочевого супу -->
+        <section id="vegetable-soup" class="page" style="display: none;">
+            <h2>Рецепт Овочевого супу</h2>
+            <p>Корисний та смачний овочевий суп для всієї родини.</p>
+            <h4>Інгредієнти:</h4>
+            <ul>
+                <li>1 морква</li>
+                <li>1 картопля</li>
+                <li>100 г броколі</li>
+                <li>1 л води</li>
+                <li>Сіль і перець за смаком</li>
+            </ul>
+            <h4>Інструкція:</h4>
+            <ol>
+                <li>Очистіть і наріжте овочі.</li>
+                <li>Варіть овочі в киплячій воді до м'якості.</li>
+                <li>Посоліть і поперчіть за смаком, подавайте гарячим.</li>
+            </ol>
+            <a href="javascript:void(0);" class="btn" onclick="showPage('recipes')">Повернутися до рецептів</a>
+        </section>
+
+        <!-- Про нас -->
+        <section id="about" class="page" style="display: none;">
+            <h2>Про нас</h2>
+            <p>Ми – команда кулінарних ентузіастів, які хочуть поділитися своїми улюбленими рецептами з вами. Від солодощів до основних страв – ми пропонуємо рецепти для кожного!</p>
+        </section>
+
+        <!-- Контакти -->
+        <section id="contact" class="page" style="display: none;">
+            <h2>Контакти</h2>
+            <p>Ви можете зв'язатися з нами за допомогою електронної пошти (contact@bakeacake.com) або телефону (+380951234567). Ми будемо раді відповісти на ваші запитання та ділитися своїми кулінарними
